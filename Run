@@ -48,11 +48,11 @@ sudo luarocks install luasec
 sudo luarocks install luasocket
 cd ../..
 rm -rf tmp
-sudo lua5.3 Mero.lua
+sudo lua5.3 alhlfy.lua
 ;;
 2)
 echo -e "\e[1m\e[32mThe bot is running now : جاري تشغيل البوت الان : \e[0m"
 sleep 2
-sudo lua5.3 Mero.lua
+sudo lua5.3 alhlfy.lua
 ;;
 esac
