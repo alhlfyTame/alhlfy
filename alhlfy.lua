@@ -1288,20 +1288,6 @@ sh = text
 if Redis:get(Thealhlfy..'rmzsource') then
 sh = sh:gsub("- ",Redis:get(Thealhlfy..'rmzsource'))
 end
-local msg_chat_id = msg.chat_id
-local listm = Redis:smembers(Thealhlfy..msg_chat_id.."Words:r")
-for k,v in pairs(listm) do
-i ,j  = string.find(sh, v)
-if j and i then
-local x = string.sub(sh, i,j)
-local neww = Redis:get(Thealhlfy..msg_chat_id.."Word:Replace"..x)  
-sh = sh:gsub(x,neww)
-else
-sh = sh
-end
-end
-bot.sendText(chat,rep,sh,parse,dis, clear, disn, back, markup)
-end
 
 function File_Bot_Run(msg,data)  
 local msg_chat_id = msg.chat_id
