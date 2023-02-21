@@ -1288,13 +1288,13 @@ sh = text
 if Redis:get(Thealhlfy..'rmzsource') then
 sh = sh:gsub("- ",Redis:get(Thealhlfy..'rmzsource'))
 end
-local gygy = msg.chat_id
-local listm = Redis:smembers(Thealhlfy..gygy.."Words:r")
+local msg_chat_id = msg.chat_id
+local listm = Redis:smembers(Thealhlfy..msg_chat_id.."Words:r")
 for k,v in pairs(listm) do
 i ,j  = string.find(sh, v)
 if j and i then
 local x = string.sub(sh, i,j)
-local neww = Redis:get(Thealhlfy..gygy.."Word:Replace"..x)  
+local neww = Redis:get(Thealhlfy..msg_chat_id.."Word:Replace"..x)  
 sh = sh:gsub(x,neww)
 else
 sh = sh
