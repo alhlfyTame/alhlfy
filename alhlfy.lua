@@ -1288,6 +1288,7 @@ sh = text
 if Redis:get(Thealhlfy..'rmzsource') then
 sh = sh:gsub("- ",Redis:get(Thealhlfy..'rmzsource'))
 end
+end
 
 function File_Bot_Run(msg,data)  
 local msg_chat_id = msg.chat_id
