@@ -1,13 +1,16 @@
-URL     = require("./libs/url")
-JSON    = require("./libs/dkjson")
+URL = require("./libs/url")
+JSON= require("./libs/dkjson")
 serpent = require("libs/serpent")
 json = require('libs/json')
-utf8 = require("libs/utf8")
 Redis = require('libs/redis').connect('127.0.0.1', 6379)
 http  = require("socket.http")
 https   = require("ssl.https")
+local Methods = io.open("./luatele.lua","r")
+if Methods then
+URL.tdlua_CallBack()
+end
 SshId = io.popen("echo $SSH_CLIENT ︙ awk '{ print $1}'"):read('*a')
-luatele = require('./libs/luatele')
+luatele = require 'luatele'
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
